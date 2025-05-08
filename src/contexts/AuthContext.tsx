@@ -1,6 +1,5 @@
-
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -22,24 +21,24 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     // First set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, currentSession) => {
-        console.log("Auth state changed:", event, currentSession?.user?.email);
         setSession(currentSession);
         setUser(currentSession?.user ?? null);
 
         if (event === "SIGNED_IN") {
-          console.log("User signed in:", currentSession?.user?.email);
           toast.success("Signed in successfully!");
-          navigate("/dashboard");
+          
+          // Navigate to dashboard with replace to avoid back button issues
+          navigate("/dashboard", { replace: true });
         }
         if (event === "SIGNED_OUT") {
-          console.log("User signed out");
           toast.info("Signed out successfully");
-          navigate("/");
+          navigate("/", { replace: true });
         }
       }
     );
@@ -48,9 +47,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const initSession = async () => {
       try {
         const { data: { session: currentSession } } = await supabase.auth.getSession();
-        console.log("Initial session check:", currentSession?.user?.email);
         setSession(currentSession);
         setUser(currentSession?.user ?? null);
+        
+        // If user is authenticated but trying to access auth pages, redirect to dashboard
+        if (currentSession?.user && (location.pathname === "/login" || location.pathname === "/")) {
+          navigate("/dashboard", { replace: true });
+        }
       } catch (error) {
         console.error("Error checking session:", error);
       } finally {
@@ -60,7 +63,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     initSession();
     return () => subscription.unsubscribe();
-  }, [navigate]);
+  }, [navigate, location.pathname]);
 
   return (
     <AuthContext.Provider value={{ user, session, loading }}>

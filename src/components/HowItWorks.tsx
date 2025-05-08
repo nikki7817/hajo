@@ -17,7 +17,7 @@ const HowItWorks = () => {
     {
       icon: <HandshakeIcon className="h-8 w-8 text-primary" />,
       title: "Connect & Exchange",
-      description: "Message book owners, arrange a meetup at Daksha College, and complete your exchange.",
+      description: "Message book owners, arrange a meetup at college, and complete your exchange.",
     },
     {
       icon: <CheckCircle2 className="h-8 w-8 text-primary" />,
@@ -32,7 +32,7 @@ const HowItWorks = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">How HAJO Works</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A simple four-step process to exchange textbooks with fellow BCA students at Daksha College
+            A simple four-step process to exchange textbooks with fellow BCA students at college
           </p>
         </div>
 
@@ -58,15 +58,9 @@ const HowItWorks = () => {
         
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">
-            Join hundreds of BCA students already exchanging books at Daksha College.
+            Join hundreds of BCA students already exchanging books at college.
           </p>
-          <a 
-            href="#" 
-            className="text-primary font-medium inline-flex items-center hover:underline"
-          >
-            Learn more about our campus guidelines
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
+    
         </div>
       </div>
     </section>

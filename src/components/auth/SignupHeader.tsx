@@ -21,7 +21,7 @@ export function SignupHeader() {
       </div>
       <CardTitle className="text-2xl text-center">Sign up for HAJO</CardTitle>
       <CardDescription className="text-center">
-        Help A Junior Out - BCA Book Exchange at Daksha College
+        Help A Junior Out - BCA Book Exchange
       </CardDescription>
     </CardHeader>
   );

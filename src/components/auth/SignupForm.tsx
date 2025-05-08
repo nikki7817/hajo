@@ -1,7 +1,4 @@
-
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -22,6 +19,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { signupFormSchema, type SignupFormValues } from "@/schemas/signupSchema";
 
 export function SignupForm() {
@@ -40,7 +39,7 @@ export function SignupForm() {
 
   const onSubmit = async (values: SignupFormValues) => {
     setIsLoading(true);
-    console.log("Signup attempt with:", values.email);
+    // console.log("Signup attempt with:", values);
 
     try {
       // We're using contactNumber as password for simplicity
@@ -62,7 +61,7 @@ export function SignupForm() {
         throw error;
       }
 
-      console.log("Signup successful:", data);
+      // console.log("Signup successful:", data);
       toast.success("Account created!");
       // Auth state change will handle redirection
     } catch (error: any) {
@@ -97,7 +96,7 @@ export function SignupForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="example@daksha.edu.in" {...field} />
+                <Input type="email" placeholder="example@xyz.edu.in" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -125,7 +124,11 @@ export function SignupForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Semester</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select 
+                  onValueChange={field.onChange} 
+                  value={field.value}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select" />
@@ -150,7 +153,11 @@ export function SignupForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Batch</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select 
+                  onValueChange={field.onChange} 
+                  value={field.value}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select" />

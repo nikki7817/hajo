@@ -57,7 +57,7 @@ const Testimonials = () => {
         <div className="mt-16 max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8 border border-border/50 text-center">
           <h3 className="text-2xl font-bold mb-4">Join 500+ BCA Students</h3>
           <p className="text-muted-foreground mb-8">
-            Be part of our Daksha BCA campus book exchange community and help make education more accessible for all
+            Be part of our BCA campus book exchange community and help make education more accessible for all
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <div className="bg-primary/5 rounded-full px-6 py-3 text-sm">

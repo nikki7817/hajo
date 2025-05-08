@@ -80,9 +80,9 @@ const Header: React.FC = () => {
 
             {!loading && user && (
               <>
-                <Link to="/dashboard" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                {/* <Link to="/dashboard" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                   Dashboard
-                </Link>
+                </Link> */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="relative h-10 w-10 rounded-full">

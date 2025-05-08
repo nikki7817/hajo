@@ -1,6 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { BookOpen, BookText, BookPlus } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -13,15 +13,19 @@ const HeroSection = () => {
               <span className="text-primary">Help BCA Juniors.</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              HAJO connects Daksha BCA students to exchange textbooks, saving money and building community. Help your juniors, or find the books you need.
+              HAJO connects BCA students to exchange textbooks, saving money and building community. Help your juniors, or find the books you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="font-medium">
-                Find Books
-              </Button>
-              <Button size="lg" variant="outline" className="font-medium">
-                List Your Books
-              </Button>
+              <Link to="/signup">
+                <Button size="lg" className="font-medium">
+                  Find Books
+                </Button>
+              </Link>
+              <Link to="/signup">
+                <Button size="lg" variant="outline" className="font-medium">
+                  List Your Books
+                </Button>
+              </Link>
             </div>
             
             <div className="mt-10 flex items-center text-sm">

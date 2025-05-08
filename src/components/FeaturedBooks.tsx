@@ -55,7 +55,7 @@ const FeaturedBooks = () => {
           <div>
             <h2 className="text-3xl font-bold mb-2">Featured Books</h2>
             <p className="text-muted-foreground max-w-2xl">
-              Recently listed textbooks ready for exchange on Daksha BCA campus
+              Recently listed textbooks ready for exchange on BCA campus
             </p>
           </div>
           <div className="mt-4 md:mt-0 flex space-x-2">

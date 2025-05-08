@@ -26,7 +26,7 @@ const Index = () => {
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Join HAJO?</h2>
             <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-              Start exchanging books, saving money, and helping fellow BCA students at Daksha College today.
+              Start exchanging books, saving money, and helping fellow BCA students today.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/signup">

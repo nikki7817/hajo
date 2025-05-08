@@ -49,7 +49,7 @@ const BookListings = ({ subjectName }: BookListingsProps) => {
     <div>
       <div className="mb-6">
         <h2 className="text-2xl font-semibold mb-2">{subjectName}</h2>
-        <p className="text-muted-foreground">Available book listings from Daksha BCA students</p>
+        <p className="text-muted-foreground">Available book listings from BCA students</p>
       </div>
       {listings.length > 0 ? (
         <BookListingsTable 

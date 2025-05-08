@@ -29,12 +29,12 @@ const Benefits = () => {
     {
       icon: <Clock className="h-6 w-6 text-primary" />,
       title: "Quick & Convenient",
-      description: "On-campus exchanges at Daksha College mean no shipping delays or online payment hassles."
+      description: "On-campus exchanges at college mean no shipping delays or online payment hassles."
     },
     {
       icon: <ShieldCheck className="h-6 w-6 text-primary" />,
       title: "Trusted Network",
-      description: "Exchange within your verified Daksha BCA community for added safety and trust."
+      description: "Exchange within your verified BCA community for added safety and trust."
     },
     {
       icon: <GraduationCap className="h-6 w-6 text-primary" />,

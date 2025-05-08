@@ -27,7 +27,7 @@ const Dashboard = () => {
               BCA Book Exchange
             </h1>
             <p className="text-muted-foreground">
-              Find and exchange books with other Daksha BCA students
+              Find and exchange books with other BCA students
             </p>
           </div>
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
